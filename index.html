@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather & Air Quality Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome untuk ikon cuaca -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="weather-container">
+        <!-- Header & Search Bar -->
+        <header class="weather-header">
+            <h1><i class="fa-solid fa-cloud-sun"></i> Weather Dashboard</h1>
+            <div class="search-box">
+                <input type="text" id="city-input" placeholder="Cari nama kota (misal: Bandung)..." autocomplete="off">
+                <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </header>
+
+        <!-- Status Pesan Error / Loading -->
+        <div id="message-container" class="message-container hide">
+            <p id="error-message">Kota tidak ditemukan. Silakan coba lagi.</p>
+        </div>
+
+        <!-- Wadah Informasi Cuaca (Awalnya tersembunyi sampai data dimuat) -->
+        <main id="weather-display" class="weather-display hide">
+            
+            <!-- Informasi Utama Kota & Suhu -->
+            <div class="current-weather">
+                <div class="location-info">
+                    <h2 id="city-name">Bandung, ID</h2>
+                    <p id="current-date">Jumat, 23 Oktober 2026</p>
+                </div>
+                <div class="temperature-info">
+                    <div class="temp-icon">
+                        <img id="weather-icon" src="https://openweathermap.org/img/wn/10d@2x.png" alt="Icon Cuaca">
+                    </div>
+                    <div>
+                        <h3 id="temperature">28°C</h3>
+                        <p id="weather-description">Cerah Berawan</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detail Tambahan (Kelembapan, Angin, Kualitas Udara/Simulasi) -->
+            <div class="weather-details-grid">
+                <div class="detail-card">
+                    <i class="fa-solid fa-droplet"></i>
+                    <div>
+                        <span>Kelembapan</span>
+                        <h4 id="humidity">75%</h4>
+                    </div>
+                </div>
+                <div class="detail-card">
+                    <i class="fa-solid fa-wind"></i>
+                    <div>
+                        <div>Kecepatan Angin</div>
+                        <h4 id="wind-speed">4.5 m/s</h4>
+                    </div>
+                </div>
+                <div class="detail-card">
+                    <i class="fa-solid fa-gauge"></i>
+                    <div>
+                        <span>Tekanan Udara</span>
+                        <h4 id="pressure">1012 hPa</h4>
+                    </div>
+                </div>
+                <div class="detail-card">
+                    <i class="fa-solid fa-smog"></i>
+                    <div>
+                        <span>Kualitas Udara (AQI)</span>
+                        <h4 id="air-quality">Baik (Good)</h4>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Petunjuk Awal Sebelum Mencari -->
+        <div id="welcome-prompt" class="welcome-prompt">
+            <i class="fa-solid fa-earth-asia"></i>
+            <p>Masukkan nama kota di atas untuk melihat informasi cuaca terkini secara real-time.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
