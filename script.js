@@ -117,3 +117,6 @@ function showError(message) {
     errorMessage.innerText = message;
     messageContainer.classList.remove("hide");
 }
+
+
+// COUNGTING 1, 
